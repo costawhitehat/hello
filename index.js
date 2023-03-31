@@ -13,6 +13,14 @@ app.post('/', function(req, res) {
 
 app.use(express.static('public'));
 
+app.get('/about', function(req, res) {
+  res.send('About page');
+});
+
+app.get('/map', function(req, res) {
+  res.send('Map page');
+});
+
 app.get('/user/:id', function(req, res) {
   console.log('Got a request for user ID:', req.params.id);
   res.send('User ID: ' + req.params.id);
