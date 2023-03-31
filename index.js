@@ -13,12 +13,14 @@ app.post('/', function(req, res) {
 
 app.use(express.static('public'));
 
+// Serve the about.html file when /about is requested
 app.get('/about', function(req, res) {
-  res.send('About page');
+  res.sendFile(path.join(__dirname + '/about.html'));
 });
 
+// Serve the map.html file when /map is requested
 app.get('/map', function(req, res) {
-  res.send('Map page');
+  res.sendFile(path.join(__dirname + '/map.html'));
 });
 
 app.get('/user/:id', function(req, res) {
